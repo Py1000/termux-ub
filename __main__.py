@@ -1,5 +1,6 @@
 import os
 from telethon import TelegramClient
+from telethon.session import StringSession
 
 e = "Lul Error"
 
@@ -13,4 +14,6 @@ API_ID = input("Enter API_ID: ")
 API_HASH = input("Enter API_HASH: ")
 SESSION = input("Enter SESSION: ")
 
-user = TelegramClient(SESSION, API_ID, API_HASH)
+session = str(SESSION)
+
+user = TelegramClient(StringSession(session), API_ID, API_HASH)
