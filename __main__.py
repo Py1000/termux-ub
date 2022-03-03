@@ -13,4 +13,3 @@ API_HASH = input("Enter API_HASH: ")
 SESSION = input("Enter SESSION: ")
 
 user = TelegramClient(API_ID, API_HASH, SESSION)
- {e}")
