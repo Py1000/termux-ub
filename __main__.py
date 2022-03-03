@@ -1,4 +1,5 @@
 import os
+from telethon import TelegramClient
 
 e = "Lul Error"
 
