@@ -1,6 +1,6 @@
 import os
 from telethon import TelegramClient
-from telethon.session import StringSession
+from telethon.sessions import StringSession
 
 e = "Lul Error"
 
