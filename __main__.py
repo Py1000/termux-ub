@@ -4,7 +4,7 @@ e = "Lul Error"
 
 def setup():
   os.system("pip install telethon")
-  from telethon import *
+  from telethon import TelegramClient 
 
 setup()
 
