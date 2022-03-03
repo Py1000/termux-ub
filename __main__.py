@@ -17,3 +17,6 @@ SESSION = input("Enter SESSION: ")
 session = str(SESSION)
 
 user = TelegramClient(StringSession(session), API_ID, API_HASH)
+
+async def startBot():
+  user.send_message("Hello!")
