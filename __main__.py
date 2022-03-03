@@ -12,5 +12,5 @@ SESSION = input("Enter SESSION: ")
 
 try:
   user = TelegramClient(API_ID, API_HASH, SESSION)
-except as e:
+except:
   print(f"Error: {e}")
