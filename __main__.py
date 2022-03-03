@@ -20,5 +20,5 @@ user = TelegramClient(StringSession(session), API_ID, API_HASH)
 
 async def startBot():
   await user.send_message("me","Hello!")
-user.loop.run_until_complete(startBot)
+async user.loop.run_until_complete(startBot)
 user.run_until_disconnected()
