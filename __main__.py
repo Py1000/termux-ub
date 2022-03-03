@@ -1,5 +1,7 @@
 import os
 
+e = "Lul Error"
+
 def setup():
   os.system("pip install telethon")
   from telethon import *
