@@ -19,4 +19,4 @@ session = str(SESSION)
 user = TelegramClient(StringSession(session), API_ID, API_HASH)
 
 async def startBot():
-  user.send_message("me","Hello!")
+  await user.send_message("me","Hello!")
