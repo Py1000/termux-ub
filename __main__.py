@@ -5,6 +5,7 @@ from telethon.sessions import StringSession
 from datetime import datetime
 
 e = "Lul Error"
+mainCmdList = ["hi","update"]
 
 try:
   varFile = open("/storage/emulated/0/VARS/var.txt","r")
@@ -52,5 +53,7 @@ async def update(event):
   await event.edit("Updated!")
   print(f"{datetime.now()} {id} used : update")
   os.system("python termux-ub")
+
+
 
 user.run_until_disconnected()
