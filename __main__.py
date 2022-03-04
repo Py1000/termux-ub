@@ -68,7 +68,7 @@ async def alive(event):
 async def delit(event):
   id = event.chat_id
   try:
-    toDel = await await event.get_reply()
+    toDel = await event.get_reply()
     await toDel.delete()
     print(f"{datetime.now()} {id} : del")
   except:
