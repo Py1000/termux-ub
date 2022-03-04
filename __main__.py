@@ -4,15 +4,27 @@ from telethon.sessions import StringSession
 
 e = "Lul Error"
 
+try:
+  varFile = open("/storage/emulated/0/VARS/var.txt","r")
+except:
+  os.mkdir("/storage/emulated/0/VARS")
+  varFile = open("/storage/emulated/0/var.txt","a")
+  API_ID = input("Enter API_ID: ")
+  varFile.write(API_ID)
+  API_HASH = input("Enter API_HASH: ")
+  varFile.write(API_HASH)
+  SESSION = input("Enter SESSION: ")
+  varFile.write(SESSION)
+  
+
+
+
 def setup():
   os.system("pip install telethon")
+  os.system("termux-setup-storage")
   from telethon import TelegramClient 
 
 setup()
-
-API_ID = input("Enter API_ID: ")
-API_HASH = input("Enter API_HASH: ")
-SESSION = input("Enter SESSION: ")
 
 session = str(SESSION)
 
