@@ -54,5 +54,24 @@ async def update(event):
   print(f"{datetime.now()} {id} used : update")
   os.system("python termux-ub")
 
+user.on(events.NewMessage(pattern=".alive",outgoing= True))
+async def alive(event):
+	id = event.id
+	aliveCaption = 
+'''
+***BOT ALIVE
+Owner : [User]("tg:settings")
+***
+'''
+	await user.send_file(id,"https://te.legra.ph/file/03c9b0143d1c222dede47.jpg",caption=aliveCaption) 
+
+
+Owner : [User]("tg:settings")
+
+***
+
+'''
+
+	await user.send_file(id,"https://te.legra.ph/file/03c9b0143d1c222dede47.jpg",caption=aliveCa
 
 user.run_until_disconnected()
