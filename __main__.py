@@ -88,7 +88,7 @@ async def lol(event):
     await event.edit("**LOL**")
     deq = deque(list("😂🤣😂🤣😂🤣😂🤣"))
     for _ in range(48):
-        await time.sleep(0.2)
+        await asyncio.sleep(0.2)
         await event.edit("".join(deq))
         deq.rotate(1)
 
