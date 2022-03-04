@@ -1,6 +1,4 @@
-from datetime import datetime
-from telethon import events
-@bot.on(events.NewMessage(patter="bye",outgoing=True))
+from . import *
 async def bye(event):
   id = event.id
   await event.edit("Bye!⚡ going offline ......")
