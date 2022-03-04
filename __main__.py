@@ -2,6 +2,7 @@ import os
 os.system("pip install telethon")
 from telethon import TelegramClient,events
 from telethon.sessions import StringSession
+from datetime import datetime
 
 e = "Lul Error"
 
@@ -38,7 +39,9 @@ async def startBot():
 
 @user.on(events.NewMessage(pattern=".hi"))
 async def hi(event):
+  id = event.id
   await event.edit("Hello there!")
+  print(f"{datetime.now()} {id} used : hi")
 
 @user.on(events.NewMessage(pattern=".update"))
 async def update(event):
@@ -46,6 +49,7 @@ async def update(event):
   os.system("rm -rf termux-ub")
   os.system("git clone https://github.com/AOSOFJ/termux-ub")
   await event.edit("Updated!")
+  print(f"{datetime.now()} {id} used : update")
   os.system("python termux-ub")
 
 user.run_until_disconnected()
