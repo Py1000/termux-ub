@@ -65,7 +65,7 @@ async def alive(event):
   print(f"{datetime.now()} {id} used : alive")
 
 @user.on(events.NewMessage(pattern=".del",outgoing="True"))
-async def del(event):
+async def delit(event):
   id = event.chat_id
   try:
     toDel = await await event.get_reply()
