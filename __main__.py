@@ -29,7 +29,7 @@ session = str(SESSION)
  
 user = TelegramClient(StringSession(session), API_ID, API_HASH)
 user.start()
-print("BOT STARTUP COMPLETE")
+print("BOT STARTUP COMPLETE \n Do .hi in any chat")
 
 async def startBot():
   await user.send_message("me","Hello!")
