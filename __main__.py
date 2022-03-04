@@ -45,7 +45,7 @@ async def update(event):
   await event.edit("Updating...")
   os.system("rm -rf termux-ub")
   os.system("git clone https://github.com/AOSOFJ/termux-ub")
-  os.system("python termux-ub")
   await event.edit("Updated!")
+  os.system("python termux-ub")
 
 user.run_until_disconnected()
