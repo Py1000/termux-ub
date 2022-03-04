@@ -55,5 +55,4 @@ async def update(event):
   os.system("python termux-ub")
 
 
-
 user.run_until_disconnected()
