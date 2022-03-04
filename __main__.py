@@ -37,13 +37,13 @@ print("BOT STARTUP COMPLETE \nDo .hi in any chat \n《---BOT LOG---》")
 async def startBot():
   await user.send_message("me","Hello!")
 
-@user.on(events.NewMessage(pattern=".hi"))
+@user.on(events.NewMessage(pattern=".hi",outgoing=True))
 async def hi(event):
   id = event.id
   await event.edit("Hello there!")
   print(f"{datetime.now()} {id} used : hi")
 
-@user.on(events.NewMessage(pattern=".update"))
+@user.on(events.NewMessage(pattern=".update",outgoing=True))
 async def update(event):
   await event.edit("Updating...")
   os.system("rm -rf termux-ub")
