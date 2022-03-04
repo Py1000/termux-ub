@@ -65,6 +65,6 @@ async def alive(event):
 
 @user.on(event.NewMessage(pattern="\."))
 async def addons(event):
-	
+  rawTxt = event.raw_text()
 
 user.run_until_disconnected()
