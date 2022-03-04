@@ -82,7 +82,7 @@ async def delit(event):
     await event.delete()
     print(f"{datetime.now()} {id} : del")
   except:
-    await event.edit("Error Occurred")
+    await event.edit("**ERROR OCCURRED**")
 
 @user.on(events.NewMessage(pattern=".lol",outgoing=True))
 async def lol(event):
@@ -92,5 +92,15 @@ async def lol(event):
         await asyncio.sleep(0.2)
         await event.edit("".join(deq))
         deq.rotate(1)
+
+@user.on(events.NewMessage(pattern="\.os",outgoing=True)
+async def os(event):
+  try:
+    txt = event.raw_text.spli(" ") 
+    cmd = txt[1]
+    os.system(f"{cmd}")
+    await event.edit("**DONE** \n**CHECK YOUR TERMINAL**")
+  except:
+     await event.edit("**ERROR OCCURRED**")
 
 user.run_until_disconnected()
