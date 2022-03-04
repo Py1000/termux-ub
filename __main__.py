@@ -45,6 +45,7 @@ async def hi(event):
 
 @user.on(events.NewMessage(pattern=".update",outgoing=True))
 async def update(event):
+  id = event.id
   await event.edit("Updating...")
   os.system("rm -rf termux-ub")
   os.system("git clone https://github.com/AOSOFJ/termux-ub")
