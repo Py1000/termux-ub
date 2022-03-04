@@ -1,4 +1,5 @@
 import os
+os.system("pip install telethon")
 from telethon import TelegramClient,events
 from telethon.sessions import StringSession
 
@@ -15,19 +16,14 @@ except:
   varFile.write(API_HASH)
   SESSION = input("Enter SESSION: ")
   varFile.write(SESSION)
-  
 
-
-
-def setup():
-  os.system("pip install telethon")
-  os.system("termux-setup-storage")
-  from telethon import TelegramClient 
-
-setup()
+varFileS = varFile.split(" ")
+API_ID = varFileS[0]
+API_HASH = varFileS[1]
+SESSION = varFileS[2]
 
 session = str(SESSION)
-
+ 
 user = TelegramClient(StringSession(session), API_ID, API_HASH)
 user.start()
 print("BOT STARTUP COMPLETE")
