@@ -58,10 +58,13 @@ async def update(event):
 async def alive(event):
 	id = event.chat_id
 	aliveCaption = '''
-        ***BOT ALIVE
-        Owner : [User]("tg:settings")***
+        **BOT ALIVE
+      Owner : [User]("tg:settings")**
        '''
 	await user.send_file(id,"https://te.legra.ph/file/03c9b0143d1c222dede47.jpg",caption=aliveCaption) 
 
+@user.on(event.NewMessage(pattern="\."))
+async def addons(event):
+	
 
 user.run_until_disconnected()
