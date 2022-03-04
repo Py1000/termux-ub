@@ -18,11 +18,12 @@ session = str(SESSION)
 
 user = TelegramClient(StringSession(session), API_ID, API_HASH)
 user.start()
+print("BOT STARTUP COMPLETE")
 
 async def startBot():
   await user.send_message("me","Hello!")
 
 @user.on(events.NewMessage(pattern=".hi"))
 async def hi(event):
-  await evemt.edit("Hello there!")
+  await event.edit("Hello there!")
 user.run_until_disconnected()
