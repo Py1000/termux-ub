@@ -79,7 +79,7 @@ async def delit(event):
   except:
     await event.edit("Error Occurred")
 
-@user.on(events.NewMessage(pattern=".lol",outgoing=Ture))
+@user.on(events.NewMessage(pattern=".lol",outgoing=True))
 async def lol(event):
     await event.edit(event, "**LOL**")
     deq = deque(list("😂🤣😂🤣😂🤣😂🤣"))
