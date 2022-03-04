@@ -58,10 +58,9 @@ user.on(events.NewMessage(pattern=".alive",outgoing= True))
 async def alive(event):
 	id = event.id
 	aliveCaption = '''
-***BOT ALIVE
-Owner : [User]("tg:settings")
-***
-'''
+        ***BOT ALIVE
+        Owner : [User]("tg:settings")***
+       '''
 	await user.send_file(id,"https://te.legra.ph/file/03c9b0143d1c222dede47.jpg",caption=aliveCaption) 
 
 
