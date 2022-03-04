@@ -7,15 +7,18 @@ e = "Lul Error"
 
 try:
   varFile = open("/storage/emulated/0/VARS/var.txt","r")
+  varFile = varFile.read()
 except:
   os.mkdir("/storage/emulated/0/VARS")
-  varFile = open("/storage/emulated/0/var.txt","a")
+  varFile = open("/storage/emulated/0/VARS/var.txt","a")
   API_ID = input("Enter API_ID: ")
   varFile.write(API_ID)
   API_HASH = input("Enter API_HASH: ")
   varFile.write(API_HASH)
   SESSION = input("Enter SESSION: ")
   varFile.write(SESSION)
+  varFile = open("/storage/emulated/0/VARS/var.txt","r")
+  varFile = varFile.read()
 
 varFileS = varFile.split(" ")
 API_ID = varFileS[0]
