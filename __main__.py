@@ -6,6 +6,7 @@ from telethon import TelegramClient,events
 from collections import deque
 from telethon.sessions import StringSession
 from datetime import datetime
+import time
 
 e = "Lul Error"
 mainCmdList = ["hi","update"]
