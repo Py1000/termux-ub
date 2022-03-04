@@ -57,8 +57,7 @@ async def update(event):
 user.on(events.NewMessage(pattern=".alive",outgoing= True))
 async def alive(event):
 	id = event.id
-	aliveCaption = 
-'''
+	aliveCaption = '''
 ***BOT ALIVE
 Owner : [User]("tg:settings")
 ***
