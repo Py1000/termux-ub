@@ -67,7 +67,7 @@ async def alive(event):
 async def del(event):
   try:
     toDel = await await event.get_reply()
-    await user.delete(toDel)
+    await toDel.delete()
 
 
 user.run_until_disconnected()
