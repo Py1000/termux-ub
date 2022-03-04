@@ -62,6 +62,7 @@ async def alive(event):
  ** Owner : [User]("tg:settings")**
   '''
   await user.send_file(id,"https://te.legra.ph/file/03c9b0143d1c222dede47.jpg",caption=aliveCaption)
+  await event.delete()
   print(f"{datetime.now()} {id} used : alive")
 
 @user.on(events.NewMessage(pattern=".del",outgoing="True"))
