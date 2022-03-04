@@ -1,6 +1,7 @@
 import os
 os.system("pip install telethon")
 os.system("pip install collections")
+import asyncio
 from telethon import TelegramClient,events
 from collections import deque
 from telethon.sessions import StringSession
