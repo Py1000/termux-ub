@@ -78,7 +78,14 @@ async def delit(event):
     print(f"{datetime.now()} {id} : del")
   except:
     await event.edit("Error Occurred")
-	
 
+@user.on(events.NewMessage(pattern=".lol",outgoing=Ture))
+async def lol(event):
+    await event.edit(event, "**LOL**")
+    deq = deque(list("😂🤣😂🤣😂🤣😂🤣"))
+    for _ in range(48):
+        await time.sleep(0.2)
+        await event.edit("".join(deq))
+        deq.rotate(1)
 
 user.run_until_disconnected()
