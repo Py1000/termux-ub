@@ -63,12 +63,4 @@ async def alive(event):
        '''
 	await user.send_file(id,"https://te.legra.ph/file/03c9b0143d1c222dede47.jpg",caption=aliveCaption) 
 
-@user.on(events.NewMessage(pattern="\."))
-async def addons(event):
-  rawTxt = event.raw_text.split(".")
-  cmd = rawTxt[1]
-  os.system("cd termux-ub/plugins")
-  os.system(f"python {cmd}.py")
-  os.system("cd")
-
 user.run_until_disconnected()
