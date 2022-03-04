@@ -61,6 +61,13 @@ async def alive(event):
         **BOT ALIVE
       Owner : [User]("tg:settings")**
        '''
-	await user.send_file(id,"https://te.legra.ph/file/03c9b0143d1c222dede47.jpg",caption=aliveCaption) 
+	await user.send_file(id,"https://te.legra.ph/file/03c9b0143d1c222dede47.jpg",caption=aliveCaption)
+
+@user.on(events.NewMessage(pattern=".del"))
+async def del(event):
+  try:
+    toDel = await await event.get_reply()
+    await user.delete(toDel)
+
 
 user.run_until_disconnected()
