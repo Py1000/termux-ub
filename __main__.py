@@ -67,7 +67,8 @@ async def alive(event):
 async def addons(event):
   rawTxt = event.raw_text.split(".")
   cmd = rawTxt[1]
-  os.system("plugins")
+  os.system("cd termux-ub/plugins")
   os.system(f"python {cmd}.py")
+  os.system("cd")
 
 user.run_until_disconnected()
