@@ -66,6 +66,8 @@ async def alive(event):
 @user.on(events.NewMessage(pattern="\."))
 async def addons(event):
   rawTxt = event.raw_text.split(".")
-  print(rawTxt)
+  cmd = rawTxt[1]
+  os.system("plugins")
+  os.system(f"python {cmd}.py")
 
 user.run_until_disconnected()
