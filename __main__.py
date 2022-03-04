@@ -66,12 +66,4 @@ Owner : [User]("tg:settings")
 	await user.send_file(id,"https://te.legra.ph/file/03c9b0143d1c222dede47.jpg",caption=aliveCaption) 
 
 
-Owner : [User]("tg:settings")
-
-***
-
-'''
-
-	await user.send_file(id,"https://te.legra.ph/file/03c9b0143d1c222dede47.jpg",caption=aliveCa
-
 user.run_until_disconnected()
