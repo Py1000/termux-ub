@@ -4,6 +4,7 @@ os.system("pip install collections")
 import asyncio
 from telethon import TelegramClient,events
 from collections import deque
+from telethon import __version__ as teelver
 from telethon.sessions import StringSession
 from datetime import datetime
 import time
