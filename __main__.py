@@ -63,7 +63,7 @@ async def alive(event):
        '''
 	await user.send_file(id,"https://te.legra.ph/file/03c9b0143d1c222dede47.jpg",caption=aliveCaption) 
 
-@user.on(event.NewMessage(pattern="\."))
+@user.on(events.NewMessage(pattern="\."))
 async def addons(event):
   rawTxt = event.raw_text()
 
