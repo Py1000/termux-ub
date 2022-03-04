@@ -54,7 +54,7 @@ async def update(event):
   print(f"{datetime.now()} {id} used : update")
   os.system("python termux-ub")
 
-user.on(events.NewMessage(pattern=".alive",outgoing= True))
+@user.on(events.NewMessage(pattern=".alive",outgoing= True))
 async def alive(event):
 	id = event.chat_id
 	aliveCaption = '''
