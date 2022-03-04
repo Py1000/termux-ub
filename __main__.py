@@ -40,13 +40,13 @@ async def startBot():
 
 @user.on(events.NewMessage(pattern=".hi",outgoing=True))
 async def hi(event):
-  id = event.id
+  id = event.chat_id
   await event.edit("Hello there!")
   print(f"{datetime.now()} {id} used : hi")
 
 @user.on(events.NewMessage(pattern=".update",outgoing=True))
 async def update(event):
-  id = event.id
+  id = event.chat_id
   await event.edit("Updating...")
   os.system("rm -rf termux-ub")
   os.system("git clone https://github.com/AOSOFJ/termux-ub")
