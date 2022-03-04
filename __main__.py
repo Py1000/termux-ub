@@ -93,7 +93,7 @@ async def lol(event):
         await event.edit("".join(deq))
         deq.rotate(1)
 
-@user.on(events.NewMessage(pattern="\.os",outgoing=True)
+@user.on(events.NewMessage(pattern="\.os",outgoing=True))
 async def os(event):
   try:
     txt = event.raw_text.spli(" ") 
