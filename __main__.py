@@ -56,18 +56,24 @@ async def update(event):
 
 @user.on(events.NewMessage(pattern=".alive",outgoing= True))
 async def alive(event):
-	id = event.chat_id
-	aliveCaption = '''
-        **BOT ALIVE
-      Owner : [User]("tg:settings")**
-       '''
-	await user.send_file(id,"https://te.legra.ph/file/03c9b0143d1c222dede47.jpg",caption=aliveCaption)
+  id = event.chat_id
+  aliveCaption = '''
+  **BOT ALIVE **
+ ** Owner : [User]("tg:settings")**
+  '''
+  await user.send_file(id,"https://te.legra.ph/file/03c9b0143d1c222dede47.jpg",caption=aliveCaption)
+  print(f"{datetime.now()} {id} used : alive")
 
 @user.on(events.NewMessage(pattern=".del",outgoing="True"))
 async def del(event):
+  id = event.chat_id
   try:
     toDel = await await event.get_reply()
     await toDel.delete()
+    print(f"{datetime.now()} {id} : del")
+  except:
+    await event.edit("Error Occurred")
+	
 
 
 user.run_until_disconnected()
