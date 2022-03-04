@@ -81,7 +81,7 @@ async def delit(event):
 
 @user.on(events.NewMessage(pattern=".lol",outgoing=True))
 async def lol(event):
-    await event.edit(event, "**LOL**")
+    await event.edit("**LOL**")
     deq = deque(list("😂🤣😂🤣😂🤣😂🤣"))
     for _ in range(48):
         await time.sleep(0.2)
