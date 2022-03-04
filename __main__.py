@@ -70,6 +70,7 @@ async def delit(event):
   try:
     toDel = await event.get_reply_message()
     await toDel.delete()
+    await event.delete()
     print(f"{datetime.now()} {id} : del")
   except:
     await event.edit("Error Occurred")
