@@ -57,9 +57,12 @@ async def update(event):
 @user.on(events.NewMessage(pattern=".alive",outgoing= True))
 async def alive(event):
   id = event.chat_id
-  aliveCaption = '''
-  **BOT ALIVE **
- ** Owner : [User]("tg:settings")**
+  aliveCaption = f'''
+  **BOT ALIVE**
+ **Owner : [User]("https://google.com")**
+ **Telethon : {telever}**
+ **Python : 3.9**
+ **BOT: 1.0**
   '''
   await user.send_file(id,"https://te.legra.ph/file/03c9b0143d1c222dede47.jpg",caption=aliveCaption)
   await event.delete()
