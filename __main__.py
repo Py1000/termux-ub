@@ -63,7 +63,7 @@ async def alive(event):
        '''
 	await user.send_file(id,"https://te.legra.ph/file/03c9b0143d1c222dede47.jpg",caption=aliveCaption)
 
-@user.on(events.NewMessage(pattern=".del"))
+@user.on(events.NewMessage(pattern=".del",outgoing="True"))
 async def del(event):
   try:
     toDel = await await event.get_reply()
