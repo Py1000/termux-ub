@@ -45,7 +45,7 @@ except:
   conFile = open("/storage/emulated/0/CONFIG/config.txt", "r")
   conFile = conFile.read()
   conFileALIVE_TXT = open("/storage/emulated/0/CONFIG/ALIVE_TXT.txt")
-  confileALIVE_TXT = conFileALIVE_TXT.read()
+  conFileALIVE_TXT = conFileALIVE_TXT.read()
 
 
 varFileS = varFile.split(" ")
