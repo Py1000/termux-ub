@@ -41,7 +41,7 @@ except:
   ALIVE_NAME = input("Enter ALIVE NAME [If you want to set this as default press enter]: ")
   ALIVE_TXT = input("Enter ALIVE TEXT [If you want to set this as default press enter]: ")
   ALIVE_PIC = input("Enter ALIVE PIC(link) [If you want to set this as default press enter]: ")
-  conFile.writelines(ALIVE_NAME)
+  conFile.writelines(f"{ALIVE_NAME} ")
   conFileALIVE_TXT.writelines(ALIVE_TXT)
   conFile.writelines(ALIVE_PIC)
   conFile = open("/storage/emulated/0/CONFIG/config.txt", "r")
