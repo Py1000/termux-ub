@@ -35,7 +35,7 @@ try:
 except:
   os.mkdir("/storage/emulated/0/CONFIG")
   conFile = open("/storage/emulated/0/CONFIG/config.txt", "w")
-  conFileALIVE_TXT = open("/storage/emulated/0/ALIVE_TXT.txt","w")
+  conFileALIVE_TXT = open("/storage/emulated/0/CONFIG/ALIVE_TXT.txt","w")
   ALIVE_NAME = input("Enter ALIVE NAME [If you want to set this as default press enter]: ")
   ALIVE_TXT = input("Enter ALIVE TEXT [If you want to set this as default press enter]: ")
   ALIVE_PIC = input("Enter ALIVE PIC(link) [If you want to set this as default press enter]: ")
