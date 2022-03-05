@@ -12,10 +12,42 @@ import time
 e = "Lul Error"
 mainCmdList = ["hi","update"]
 
+def editVars():
+  varFile = open("/storage/emulated/0/VARS/var.txt","a")
+  API_ID = input("Enter API_ID: ")
+  varFile.write(f"{API_ID} ")
+  API_HASH = input("Enter API_HASH: ")
+  varFile.write(f"{API_HASH} ")
+  SESSION = input("Enter SESSION: ")
+  varFile.write(f"{SESSION}")
+  varFile = open("/storage/emulated/0/VARS/var.txt","r")
+  varFile = varFile.read()
+
+def editConfig():
+  conFile = open("/storage/emulated/0/CONFIG/config.txt", "w")
+  conFileALIVE_TXT = open("/storage/emulated/0/CONFIG/ALIVE_TXT.txt","w")
+  ALIVE_NAME = input("Enter ALIVE NAME [If you want to set this as default press enter]: ")
+  ALIVE_TXT = input("Enter ALIVE TEXT [If you want to set this as default press enter]: ")
+  ALIVE_PIC = input("Enter ALIVE PIC(link) [If you want to set this as default press enter]: ")
+  conFile.writelines(f"{ALIVE_NAME} ")
+  conFileALIVE_TXT.writelines(ALIVE_TXT)
+  conFile.writelines(ALIVE_PIC)
+  conFile = open("/storage/emulated/0/CONFIG/config.txt", "r")
+  conFile = conFile.read()
+  conFileALIVE_TXT = open("/storage/emulated/0/CONFIG/ALIVE_TXT.txt")
+  conFileALIVE_TXT = conFileALIVE_TXT.read()
+
 #var
 try:
   varFile = open("/storage/emulated/0/VARS/var.txt","r")
   varFile = varFile.read()
+  ask = input("Edit vars [y/press enter]: ")
+  ask = ask.lower()
+  if ask == "y":
+    editVars()
+  else:
+    pass
+
 except:
   os.mkdir("/storage/emulated/0/VARS")
   varFile = open("/storage/emulated/0/VARS/var.txt","a")
@@ -34,6 +66,12 @@ try:
   conFile = conFile.read()
   conFileALIVE_TXT = open("/storage/emulated/0/CONFIG/ALIVE_TXT.txt")
   conFileALIVE_TXT = conFileALIVE_TXT.read()
+  ask = input("Edit config [y/press enter]: ")
+  ask = ask.lower()
+  if ask == "y":
+    editConfig()
+  else:
+    pass
 except:
   os.mkdir("/storage/emulated/0/CONFIG")
   conFile = open("/storage/emulated/0/CONFIG/config.txt", "w")
