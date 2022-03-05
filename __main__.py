@@ -1,6 +1,5 @@
 import os
 os.system("pip install telethon")
-os.system("pip install collections")
 import asyncio
 from telethon import TelegramClient,events
 from collections import deque
@@ -128,7 +127,7 @@ async def update(event):
 @user.on(events.NewMessage(pattern=".alive",outgoing= True))
 async def alive(event):
   id = event.chat_id
-  userLink = await user,get_profile("t.me/username")
+  userLink = await user.get_profile("t.me/username")
   aliveCaption = f'''
   **{ALIVE_TXT}**
  **Owner : [{ALIVE_NAME}](https://google.com)**
