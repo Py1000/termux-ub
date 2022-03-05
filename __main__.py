@@ -59,7 +59,7 @@ session = str(SESSION)
 conFileS = conFile.split(" ")
 ALIVE_NAME = conFileS[0]
 ALIVE_TXT = conFileALIVE_TXT
-ALIVE_PIC = conFile[1]
+ALIVE_PIC = conFileS[1]
 print(ALIVE_PIC)
 
 user = TelegramClient(StringSession(session), API_ID, API_HASH)
