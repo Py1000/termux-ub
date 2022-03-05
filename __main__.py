@@ -35,14 +35,17 @@ try:
 except:
   os.mkdir("/storage/emulated/0/CONFIG")
   conFile = open("/storage/emulated/0/CONFIG/config.txt", "w")
+  conFileALIVE_TXT = open("/storage/emulated/0/ALIVE_TXT.txt","w")
   ALIVE_NAME = input("Enter ALIVE NAME [If you want to set this as default press enter]: ")
   ALIVE_TXT = input("Enter ALIVE TEXT [If you want to set this as default press enter]: ")
   ALIVE_PIC = input("Enter ALIVE PIC(link) [If you want to set this as default press enter]: ")
   conFile.writelines(ALIVE_NAME)
-  conFile.writelines(ALIVE_TXT)
+  conFileALIVE_TXT.writelines(ALIVE_TXT)
   conFile.writelines(ALIVE_PIC)
   conFile = open("/storage/emulated/0/CONFIG/config.txt", "r")
   conFile = conFile.read()
+  conFileALIVE_TXT = open("/storage/emulated/0/CONFIG/ALIVE_TXT.txt")
+  confileALIVE_TXT = conFileALIVE_TXT.read()
 
 
 varFileS = varFile.split(" ")
@@ -53,8 +56,8 @@ session = str(SESSION)
 
 conFileS = conFile.split(" ")
 ALIVE_NAME = conFileS[0]
-ALIVE_TXT = conFileS[1]
-ALIBE_PIC = conFile[2]
+ALIVE_TXT = conFileALIVE_TXT
+ALIVE_PIC = conFile[1]
 
 user = TelegramClient(StringSession(session), API_ID, API_HASH)
 user.start()
@@ -85,7 +88,7 @@ async def update(event):
 async def alive(event):
   id = event.chat_id
   aliveCaption = f'''
-  **BOT ALIVE**
+  **{ALIVE_TXT}**
  **Owner : [{ALIVE_NAME}](https://google.com)**
  **Telethon : {telever}**
  **Python : 3.9**
