@@ -60,6 +60,7 @@ conFileS = conFile.split(" ")
 ALIVE_NAME = conFileS[0]
 ALIVE_TXT = conFileALIVE_TXT
 ALIVE_PIC = conFile[1]
+print(ALIVE_PIC)
 
 user = TelegramClient(StringSession(session), API_ID, API_HASH)
 user.start()
@@ -96,7 +97,7 @@ async def alive(event):
  **Python : 3.9**
  **BOT: 1.0**
   '''
-  await user.send_file(id,ALIVE_PIC,caption=aliveCaption)
+  await user.send_file(id,"https://telegra.ph/file/71434f41ac9e981a18980.png",caption=aliveCaption)
   await event.delete()
   print(f"{datetime.now()} {id} used : alive")
 
