@@ -104,7 +104,6 @@ user = TelegramClient(StringSession(session), API_ID, API_HASH)
 user.start()
 os.system("clear")
 print("BOT STARTUP COMPLETE \nDo .hi in any chat \n《---BOT LOG---》")
-print(user.id)
 
 
 async def startBot():
