@@ -117,7 +117,7 @@ async def lol(event):
         deq.rotate(1)
 
 @user.on(events.NewMessage(pattern="\.os",outgoing=True))
-async def os(event):
+async def telOs(event):
   try:
     txt = event.raw_text.spli(" ") 
     cmd = txt[1]
