@@ -51,6 +51,11 @@ API_HASH = varFileS[1]
 SESSION = varFileS[2]
 session = str(SESSION)
 
+conFileS = conFile.split(" ")
+ALIVE_NAME = conFileS[0]
+ALIVE_TXT = conFileS[1]
+ALIBE_PIC = conFile[2]
+
 user = TelegramClient(StringSession(session), API_ID, API_HASH)
 user.start()
 os.system("clear")
@@ -81,12 +86,12 @@ async def alive(event):
   id = event.chat_id
   aliveCaption = f'''
   **BOT ALIVE**
- **Owner : [User]("https://google.com")**
+ **Owner : [{ALIVE_NAME}](https://google.com)**
  **Telethon : {telever}**
  **Python : 3.9**
  **BOT: 1.0**
   '''
-  await user.send_file(id,"https://te.legra.ph/file/03c9b0143d1c222dede47.jpg",caption=aliveCaption)
+  await user.send_file(id,f"{ALIVE_PIC}",caption=aliveCaption)
   await event.delete()
   print(f"{datetime.now()} {id} used : alive")
 
