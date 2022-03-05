@@ -32,6 +32,8 @@ except:
 try:
   conFile = open("/storage/emulated/0/CONFIG/config.txt","r")
   conFile = conFile.read()
+  conFileALIVE_TXT = open("/storage/emulated/0/CONFIG/ALIVE_TXT.txt")
+  conFileALIVE_TXT = conFileALIVE_TXT.read()
 except:
   os.mkdir("/storage/emulated/0/CONFIG")
   conFile = open("/storage/emulated/0/CONFIG/config.txt", "w")
