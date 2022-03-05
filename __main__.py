@@ -129,6 +129,7 @@ async def update(event):
 @user.on(events.NewMessage(pattern=".alive",outgoing= True))
 async def alive(event):
   id = event.chat_id
+  userLink = await user,get_profile("t.me\username")
   aliveCaption = f'''
   **{ALIVE_TXT}**
  **Owner : [{ALIVE_NAME}](https://google.com)**
@@ -138,6 +139,7 @@ async def alive(event):
   '''
   await user.send_file(id,ALIVE_PIC,caption=aliveCaption)
   await event.delete()
+  print(f"User Link : {userLink}")
   print(f"{datetime.now()} {id} used : alive")
 
 @user.on(events.NewMessage(pattern=".del",outgoing="True"))
