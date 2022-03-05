@@ -12,6 +12,7 @@ import time
 e = "Lul Error"
 mainCmdList = ["hi","update"]
 
+#var
 try:
   varFile = open("/storage/emulated/0/VARS/var.txt","r")
   varFile = varFile.read()
@@ -27,13 +28,29 @@ except:
   varFile = open("/storage/emulated/0/VARS/var.txt","r")
   varFile = varFile.read()
 
+#config
+try:
+  conFile = open("/storage/emulated/0/CONFIG/config.txt","r")
+  conFile = conFile.read()
+except:
+  os.mkidr("/storage/emulated/0/CONFIG")
+  conFile = open("/storage/emulated/0/CONFIG/config.txt", "w")
+  ALIVE_NAME = input("Enter ALIVE NAME [If you want to set this as default press enter]: ")
+  ALIVE_TXT = input("Enter ALIVE TEXT [If you want to set this as default press enter]: ")
+  ALIVE_PIC = input("Enter ALIVE PIC(link) [If you want to set this as default press enter]: ")
+  conFile.writelines(ALIVE_NAME)
+  conFile.writelines(ALIVE_TXT)
+  conFile.writelines(ALIVE_PIC)
+  conFile = open("/storage/emulated/0/CONFIG/config.txt", "r")
+  conFile = conFile.read()
+
+
 varFileS = varFile.split(" ")
 API_ID = varFileS[0]
 API_HASH = varFileS[1]
 SESSION = varFileS[2]
-
 session = str(SESSION)
- 
+
 user = TelegramClient(StringSession(session), API_ID, API_HASH)
 user.start()
 os.system("clear")
@@ -88,6 +105,7 @@ async def delit(event):
 async def lol(event):
     await event.edit("**LOL**")
     deq = deque(list("😂🤣😂🤣😂🤣😂🤣"))
+    print(f"{datetime.now()} id used : lol")
     for _ in range(48):
         await asyncio.sleep(0.2)
         await event.edit("".join(deq))
