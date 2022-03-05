@@ -96,7 +96,7 @@ async def alive(event):
  **Python : 3.9**
  **BOT: 1.0**
   '''
-  await user.send_file(id,f"{ALIVE_PIC}",caption=aliveCaption)
+  await user.send_file(id,ALIVE_PIC,caption=aliveCaption)
   await event.delete()
   print(f"{datetime.now()} {id} used : alive")
 
