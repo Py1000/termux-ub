@@ -98,7 +98,7 @@ async def alive(event):
  **Python : 3.9**
  **BOT: 1.0**
   '''
-  await user.send_file(id,"https://telegra.ph/file/71434f41ac9e981a18980.png",caption=aliveCaption)
+  await user.send_file(id,ALIVE_PIC,caption=aliveCaption)
   await event.delete()
   print(f"{datetime.now()} {id} used : alive")
 
