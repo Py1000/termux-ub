@@ -33,7 +33,7 @@ try:
   conFile = open("/storage/emulated/0/CONFIG/config.txt","r")
   conFile = conFile.read()
 except:
-  os.mkidr("/storage/emulated/0/CONFIG")
+  os.mkdir("/storage/emulated/0/CONFIG")
   conFile = open("/storage/emulated/0/CONFIG/config.txt", "w")
   ALIVE_NAME = input("Enter ALIVE NAME [If you want to set this as default press enter]: ")
   ALIVE_TXT = input("Enter ALIVE TEXT [If you want to set this as default press enter]: ")
