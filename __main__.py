@@ -160,7 +160,7 @@ async def lol(event):
 @user.on(events.NewMessage(pattern="\.os",outgoing=True))
 async def telOs(event):
   try:
-    txt = event.raw_text.spli(" ") 
+    txt = event.raw_text.split(" ") 
     cmd = txt[1]
     os.system(f"{cmd}")
     await event.edit("**DONE** \n**CHECK YOUR TERMINAL**")
