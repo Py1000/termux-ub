@@ -29,10 +29,18 @@ def editConfig():
   ALIVE_NAME = input("Enter ALIVE NAME [If you want to set this as default press enter]: ")
   ALIVE_TXT = input("Enter ALIVE TEXT [If you want to set this as default press enter]: ")
   ALIVE_PIC = input("Enter ALIVE PIC(link) [If you want to set this as default press enter]: ")
-  conFile.writelines(f"{ALIVE_NAME} ")
-  conFileALIVE_TXT.writelines(ALIVE_TXT)
-  conFile.writelines(ALIVE_PIC)
-  conFile = open("/storage/emulated/0/CONFIG/config.txt", "r")
+  if ALIVE_NAME == "":
+   conFile.write("Owner ")
+  else:
+    conFile.writelines(f"{ALIVE_NAME} ")
+  if ALIVE_TXT == "":
+   conFileALIVE_TXT.write("Hey I am ALIVE!")
+  else:
+    conFileALIVE_TXT.writelines(ALIVE_TXT)
+  if ALIVE_PIC == "":
+   conFile.write("https://te.legra.ph/file/03c9b0143d1c222dede47.jpg")
+  else:
+    conFile.writelines(ALIVE_PIC)
   conFile = conFile.read()
   conFileALIVE_TXT = open("/storage/emulated/0/CONFIG/ALIVE_TXT.txt")
   conFileALIVE_TXT = conFileALIVE_TXT.read()
