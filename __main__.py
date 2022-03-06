@@ -110,7 +110,7 @@ async def startBot():
   await user.send_message("me","Hello!")
 
 @user.on(events.NewMessage(pattern=".hi",outgoing=True))
-async def hi(event):
+async def _hi(event):
   await hi(event)
 #  id = event.chat_id
 #  await event.edit("Hello there!")
