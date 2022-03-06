@@ -110,11 +110,10 @@ async def startBot():
   await user.send_message("me","Hello!")
 
 @user.on(events.NewMessage(pattern=".hi",outgoing=True))
-async def _hi(event):
-  await hi(event)
-#  id = event.chat_id
-#  await event.edit("Hello there!")
-#  print(f"{datetime.now()} {id} used : hi")
+async def hi(event):
+  id = event.chat_id
+  await event.edit("Hello there!")
+  print(f"{datetime.now()} {id} used : hi")
 
 @user.on(events.NewMessage(pattern=".update",outgoing=True))
 async def update(event):
