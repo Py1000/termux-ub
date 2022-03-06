@@ -41,6 +41,7 @@ def editConfig():
    conFile.write("https://te.legra.ph/file/03c9b0143d1c222dede47.jpg")
   else:
     conFile.writelines(ALIVE_PIC)
+  conFile = open("/storage/emulated/0/CONFIG/config.txt", "r")
   conFile = conFile.read()
   conFileALIVE_TXT = open("/storage/emulated/0/CONFIG/ALIVE_TXT.txt")
   conFileALIVE_TXT = conFileALIVE_TXT.read()
