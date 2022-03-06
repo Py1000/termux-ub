@@ -121,7 +121,7 @@ async def update(event):
   await event.edit("Updating...")
   os.system("rm -rf termux-ub")
   os.system("git clone https://github.com/AOSOFJ/termux-ub")
-  await event.edit("Updated!")
+  await event.edit("**UPDATED!**")
   print(f"{datetime.now()} {id} used : update")
   os.system("python termux-ub")
 
@@ -137,7 +137,6 @@ async def alive(event):
   '''
   await user.send_file(id,ALIVE_PIC,caption=aliveCaption)
   await event.delete()
-  print(f"User Link : {userLink}")
   print(f"{datetime.now()} {id} used : alive")
 
 @user.on(events.NewMessage(pattern=".del",outgoing="True"))
