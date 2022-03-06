@@ -148,9 +148,10 @@ async def delit(event):
 
 @user.on(events.NewMessage(pattern=".lol",outgoing=True))
 async def lol(event):
+    id = event.chat_id
     await event.edit("**LOL**")
     deq = deque(list("😂🤣😂🤣😂🤣😂🤣"))
-    print(f"{datetime.now()} id used : lol")
+    print(f"{datetime.now()} {id} used : lol")
     for _ in range(48):
         await asyncio.sleep(0.2)
         await event.edit("".join(deq))
@@ -165,5 +166,19 @@ async def telOs(event):
     await event.edit("**DONE** \n**CHECK YOUR TERMINAL**")
   except:
      await event.edit("**ERROR OCCURRED**")
+
+@user.on(events.NewMessage(pattern=".edit var",outgoing=True))
+async def varEdit(event):
+  id = event.chat_id
+  await event.edit("**Opened A Portal In Termux \nEdit Your VARS There**")
+  editVars()
+  print(f"{datetime.now()} {id} used : edit var")
+
+@user.on(events.NewMessage(pattern=".edit config",outgoing=True))
+async def conEdit(event):
+  id = event.chat_id
+  await event.edit("**Opened A Portal In Termux \nEdit Your CONFIG There**")
+  editConfig()
+  print(f"{datetime.now()} {id} used : edit config")
 
 user.run_until_disconnected()
