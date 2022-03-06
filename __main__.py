@@ -2,6 +2,7 @@ import os
 os.system("pip install telethon")
 import asyncio
 from telethon import TelegramClient,events
+from termuxPlug import *
 from collections import deque
 from telethon import __version__ as telever
 from telethon.sessions import StringSession
@@ -110,9 +111,10 @@ async def startBot():
 
 @user.on(events.NewMessage(pattern=".hi",outgoing=True))
 async def hi(event):
-  id = event.chat_id
-  await event.edit("Hello there!")
-  print(f"{datetime.now()} {id} used : hi")
+  hi()
+#  id = event.chat_id
+#  await event.edit("Hello there!")
+#  print(f"{datetime.now()} {id} used : hi")
 
 @user.on(events.NewMessage(pattern=".update",outgoing=True))
 async def update(event):
