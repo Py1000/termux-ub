@@ -111,7 +111,7 @@ async def startBot():
 
 @user.on(events.NewMessage(pattern=".hi",outgoing=True))
 async def hi(event):
-  hi()
+  hi(event)
 #  id = event.chat_id
 #  await event.edit("Hello there!")
 #  print(f"{datetime.now()} {id} used : hi")
