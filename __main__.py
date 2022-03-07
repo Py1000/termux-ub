@@ -192,7 +192,15 @@ async def conEdit(event):
 
 @user.on(events.NewMessage(pattern="\.spam"))
 async def spam(event):
-  raw = event.raw_txt.split(" ")
+  id = event.chat_id
+  raw = event.raw_text.split(" ")
   spamCount = raw[1]
+  spamCount = int(spamCount)
+  rawOp = event.raw_text.split("|")
+  spamMessage = rawOp[1]
+  i = 0
+  while i != spamCount:
+    await user.send_message(id,spamMessage)
+    i = i+1
 
 user.run_until_disconnected()
