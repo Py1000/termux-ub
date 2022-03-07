@@ -1,6 +1,5 @@
 import os
 os.system("pip install telethon")
-os.system("termux-setup-storage")
 import asyncio
 from telethon import TelegramClient,events
 from termuxPlug import *
@@ -9,9 +8,6 @@ from telethon import __version__ as telever
 from telethon.sessions import StringSession
 from datetime import datetime
 import time
-
-e = "Lul Error"
-mainCmdList = ["hi","update"]
 
 def restart():
   os.system("python termux-ub")
@@ -55,6 +51,7 @@ try:
   varFile = open("/storage/emulated/0/VARS/var.txt","r")
   varFile = varFile.read()
 except:
+  os.system("termux-setup-storage")
   os.mkdir("/storage/emulated/0/VARS")
   varFile = open("/storage/emulated/0/VARS/var.txt","a")
   API_ID = input("Enter API_ID: ")
@@ -73,6 +70,7 @@ try:
   conFileALIVE_TXT = open("/storage/emulated/0/CONFIG/ALIVE_TXT.txt")
   conFileALIVE_TXT = conFileALIVE_TXT.read()
 except:
+  os.system("termux-setup-storage")
   os.mkdir("/storage/emulated/0/CONFIG")
   conFile = open("/storage/emulated/0/CONFIG/config.txt", "w")
   conFileALIVE_TXT = open("/storage/emulated/0/CONFIG/ALIVE_TXT.txt","w")
@@ -216,7 +214,7 @@ async def spam(event):
   print(f"{datetime.now()} {id} used : spam")
 
 @user.on(events.NewMessage(pattern=".restart",outgoing=True))
-async def restart(event):
+async def _restart(event):
   await event.edit("**OK**")
   os.system("python termux-ub")
   
