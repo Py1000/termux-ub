@@ -190,8 +190,9 @@ async def conEdit(event):
   editConfig()
   print(f"{datetime.now()} {id} used : edit config")
 
-@user.on(events.NewMessage(pattern="\.set"))
-async def set(event):
-  print("In progress")
+@user.on(events.NewMessage(pattern="\.spam"))
+async def spam(event):
+  raw = event.raw_txt.split(" ")
+  spamCount = raw[1]
 
 user.run_until_disconnected()
