@@ -190,4 +190,8 @@ async def conEdit(event):
   editConfig()
   print(f"{datetime.now()} {id} used : edit config")
 
+@user.on(events.NewMessage(pattern="\.set"))
+async def set(event):
+  print("In progress")
+
 user.run_until_disconnected()
