@@ -1,6 +1,6 @@
 import os
 os.system("pip install telethon")
-os,system("termux-setup-storage")
+os.system("termux-setup-storage")
 import asyncio
 from telethon import TelegramClient,events
 from termuxPlug import *
