@@ -202,7 +202,7 @@ async def spam(event):
   rawOp = event.raw_text.split("|")
   try:
     spamMessage = rawOp[1]
- except:
+  except:
     await event.edit("**ERROR OCCURRED \n Do :** ```.spam <number> | <spam Message>``` ")
   i = 0
   while i != spamCount:
