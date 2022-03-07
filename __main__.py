@@ -190,7 +190,7 @@ async def conEdit(event):
   editConfig()
   print(f"{datetime.now()} {id} used : edit config")
 
-@user.on(events.NewMessage(pattern="\.spam"))
+@user.on(events.NewMessage(pattern="\.spam", outgoing=True))
 async def spam(event):
   id = event.chat_id
   raw = event.raw_text.split(" ")
@@ -209,5 +209,11 @@ async def spam(event):
     await user.send_message(id,spamMessage)
     i = i+1
   print(f"{datetime.now()} {id} used : spam")
+
+@user.on(events.NewMessage(pattern=".restart",outgoing=True))
+async def restart(event):
+  await event.edit("**OK**")
+  os.system("python termux-ub")
+  
 
 user.run_until_disconnected()
