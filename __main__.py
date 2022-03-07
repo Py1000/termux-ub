@@ -13,6 +13,9 @@ import time
 e = "Lul Error"
 mainCmdList = ["hi","update"]
 
+def restart():
+  os.system("python termux-ub")
+
 def editVars():
   varFile = open("/storage/emulated/0/VARS/var.txt","a")
   API_ID = input("Enter API_ID: ")
@@ -200,6 +203,7 @@ async def spam(event):
     spamCount = int(spamCount)
   except:
     await event.edit("**ERROR OCCURRED \n Do :** ```.spam <number> | <spam Message>``` ")
+    restart()
   rawOp = event.raw_text.split("|")
   try:
     spamMessage = rawOp[1]
